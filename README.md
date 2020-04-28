@@ -2,7 +2,7 @@
  
 # Activity Monitor
 
-This is the reimplementation in Windows.Forms of [Personal Activity Monitor]https://archive.codeplex.com/?p=activitymonitor, originally written by Arkadius Benedikt
+This is the reimplementation in Windows.Forms of [Personal Activity Monitor](https://archive.codeplex.com/?p=activitymonitor), originally written by Arkadius Benedikt
 
 ## Features
 
