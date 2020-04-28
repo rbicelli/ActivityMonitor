@@ -1,0 +1,52 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="CtCategorySequenceSoftware">Sequence Software</string>
+      <string id="CtSequenceSoftwareActMon">Activity Monitor</string>
+      
+	  <string id="ActMonLockSettings">Lock Settings</string>
+      <string id="ActMonLockSettings_Help">This policy settings allows you to manage Activity Monitor.
+If you enable this setting the Settings Form will be locked and local application settings will be ignored.
+</string>
+	  <string id="ActMonRunHidden">Run Hidden</string>
+      <string id="ActMonRunHidden_Help">When this setting is enabled, ActMon runs in hidden mode, so no tray icon is displayed.
+</string>
+	  <string id="ActMonHideMenuExit">Hide Exit Menu</string>
+      <string id="ActMonHideMenuExit_Help">When this setting is enabled, user cannot exit application.
+</string>
+	  <string id="ActMonDatabaseDumpInterval">Database Dump Interval</string>
+      <string id="ActMonDatabaseDumpInterval_Help">Provide these settings for custom dump interval to database.
+</string>
+	  <string id="DumpInterval_30secs" >30 Seconds</string>
+	  <string id="DumpInterval_1min" >1 Minute</string>
+	  <string id="DumpInterval_2mins" >2 Minutes</string>
+<string id="ActMonDatabaseConnection">Database Connection</string>
+      <string id="ActMonDatabaseConnection_Help">Provide these settings for the SQL Server database.
+</string>
+</stringTable>	
+    <presentationTable>           
+	   <presentation id="ActMonDatabaseConnection">
+        <textBox refId="DatabaseServer">
+          <label>Server:</label>
+        </textBox>
+		<textBox refId="DatabaseCatalog">
+          <label>Database Name:</label>
+        </textBox>
+		<textBox refId="DatabaseUsername">
+          <label>User Name:</label>
+        </textBox>
+		<textBox refId="DatabasePassword">
+          <label>Pasword:</label>
+        </textBox>
+      </presentation>
+	   <presentation id="ActMonDatabaseDumpIntervals">
+        <dropdownList refId="ActMonDatabaseDumpIntervals" noSort="true">Database Dump Interval</dropdownList>
+      </presentation>
+    </presentationTable>
+	
+  </resources>
+</policyDefinitionResources>

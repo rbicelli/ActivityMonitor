@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Riccardo Bicelli - Sequence. All rights reserved.  -->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+ <policyNamespaces>
+    <target prefix="sqactmon" namespace="Sequence.ActMon.Application" />
+    <using prefix="sequence" namespace="Sequence.Policies.Common" />
+	<using prefix="windows" namespace="Microsoft.Policies.Windows" />	
+ </policyNamespaces>
+ <resources minRequiredRevision="1.0" />
+  <categories>    
+	<category name="CtSequenceSoftwareActMon" displayName="$(string.CtSequenceSoftwareActMon)">
+	<parentCategory ref="sequence:CtSequenceSoftware" />
+	</category>
+  </categories>
+   <policies>
+    <policy name="ActMonLockSettings" class="User" displayName="$(string.ActMonLockSettings)" explainText="$(string.ActMonLockSettings_Help)" key="Software\Policies\Sequence Software\ActMon" valueName="LockSettings">
+      <parentCategory ref="CtSequenceSoftwareActMon" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <delete />
+      </disabledValue>
+    </policy>
+	<policy name="ActMonRunHidden" class="User" displayName="$(string.ActMonRunHidden)" explainText="$(string.ActMonRunHidden_Help)" key="Software\Policies\Sequence Software\ActMon" valueName="RunHidden">
+      <parentCategory ref="CtSequenceSoftwareActMon" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <delete />
+      </disabledValue>
+    </policy>
+	<policy name="ActMonHideMenuExit" class="User" displayName="$(string.ActMonHideMenuExit)" explainText="$(string.ActMonHideMenuExit_Help)" key="Software\Policies\Sequence Software\ActMon" valueName="HideMenuExit">
+      <parentCategory ref="CtSequenceSoftwareActMon" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+	  <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <delete />
+      </disabledValue>
+    </policy>
+    <policy name="ActMonDatabaseDumpInterval" class="User" displayName="$(string.ActMonDatabaseDumpInterval)" explainText="$(string.ActMonDatabaseDumpInterval_Help)" presentation="$(presentation.ActMonDatabaseDumpIntervals)" key="Software\Policies\Sequence Software\ActMon">
+      <parentCategory ref="CtSequenceSoftwareActMon" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <enum id="ActMonDatabaseDumpIntervals" valueName="DumpInterval">
+          <item displayName="$(string.DumpInterval_30secs)">
+            <value>
+              <decimal value="30" />
+            </value>
+          </item>
+          <item displayName="$(string.DumpInterval_1min)">
+            <value>
+              <decimal value="60" />
+            </value>
+          </item>
+          <item displayName="$(string.DumpInterval_2mins)">
+            <value>
+              <decimal value="120" />
+            </value>
+          </item>          
+        </enum>
+      </elements>
+    </policy>		
+	<policy name="ActMonDatabaseConnection" class="User" displayName="$(string.ActMonDatabaseConnection)" explainText="$(string.ActMonDatabaseConnection_Help)" presentation="$(presentation.ActMonDatabaseConnection)" key="Software\Policies\Sequence Software\ActMon">
+      <parentCategory ref="CtSequenceSoftwareActMon" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <elements>
+        <text id="DatabaseServer" valueName="DatabaseServer" required="true" />
+		<text id="DatabaseCatalog" valueName="DatabaseCatalog" required="true" />
+		<text id="DatabaseUsername" valueName="DatabaseUsername" required="true" />
+		<text id="DatabasePassword" valueName="DatabasePassword" required="true" />
+      </elements>
+    </policy>		
+  </policies>
+</policyDefinitions>
+  
