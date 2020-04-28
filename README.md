@@ -12,7 +12,7 @@ This is the reimplementation in Windows.Forms of [Personal Activity Monitor]http
 
 ## Installation
 
-You can find the compiled version in [releases](https://github.com/rbicelli/ActMon/releases)
+You can find the compiled version in [releases](https://github.com/rbicelli/ActivityMonitor/releases)
 
 ## SQL Server Database Setup
 
